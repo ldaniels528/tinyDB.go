@@ -1,0 +1,5 @@
+.DS_Store/
+.idea/
+**/*.iml
+lollypop_db/
+target/

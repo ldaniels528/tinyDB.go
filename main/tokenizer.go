@@ -82,15 +82,18 @@ func (token Token) GetValue() (any, error) {
 	return text, nil
 }
 
-func determineCodePosition(inputs CharSlice, start int) (int, int) {
+func DetermineCodePosition(inputs CharSlice, start int) (int, int) {
 	lineNo := 1
-	for pos := 1; pos < start; pos++ {
-		r := inputs[pos]
-		if r == '\n' {
+	columnNo := 1
+	for pos := 0; pos <= start; pos++ {
+		switch inputs[pos] {
+		case '\n':
 			lineNo++
+			columnNo = 1
+		default:
+			columnNo++
 		}
 	}
-	columnNo := max(start-lineNo, 1)
 	return lineNo, columnNo
 }
 
@@ -112,7 +115,7 @@ func isWhitespace(inputs CharSlice, pos *int) bool {
 }
 
 func makeToken(inputs CharSlice, start int, end int, tokenType TokenType) *Token {
-	lineNumber, columnNumber := determineCodePosition(inputs, start)
+	lineNumber, columnNumber := DetermineCodePosition(inputs, start)
 	return &Token{
 		Text:         string(inputs[start:end]),
 		Type:         tokenType,

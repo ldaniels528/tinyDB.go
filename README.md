@@ -2,7 +2,7 @@ Tiny VM (Go variant)
 ======================
 
 The purpose of this project is evaluate the developer experience offered by
-Rust and Go by implementing the same small virtual machine in both languages.
+Rust and Go by implementing the [same virtual machine](https://github.com/ldaniels528/lollypop) in both languages.
 
 You can find the [Rust variant here](https://github.com/ldaniels528/tiny_vm).
 

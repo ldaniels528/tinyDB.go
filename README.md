@@ -6,7 +6,7 @@ TinyDB (Go port)
 The purpose of this project is evaluate the developer experience offered by
 Rust and Go by implementing the [same database engine](https://github.com/ldaniels528/lollypop) in both languages.
 
-You can find the [Go version here](https://github.com/ldaniels528/tinyDB).
+You can find the [Rust version here](https://github.com/ldaniels528/tinyDB).
 
 I'm just getting started but check back from time to time to see the progress.
 
